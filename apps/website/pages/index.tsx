@@ -51,7 +51,9 @@ export function Index() {
               shape="round"
               icon={<DownloadOutlined />}
               size={'large'}
-              onClick={() => dispatch(connect())}
+              onClick={() => {
+                dispatch(connect());
+              }}
             >
               Connect To Wallet
             </Button>

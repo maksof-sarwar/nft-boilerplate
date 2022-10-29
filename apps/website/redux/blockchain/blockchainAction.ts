@@ -1,11 +1,12 @@
-import { ethers } from 'ethers';
+import { ethers, providers } from 'ethers';
 import { readEth } from '../../utils/ethereum';
 import { fetchData } from '../data/dataActions';
 import CONTRACT_ABI from '../../../../artifacts/contracts/contract-sample.sol/CONTRACTSAMPLE.json';
 import config from '@armorsclub/data/config';
 
 import { connectionFailed, connectionRequest, connectionSuccess, updateAccountRequest } from '@armorsclub/apps/website/redux/blockchain/blockChain.slice';
-
+import { web3Provider } from '../../utils/web3-function';
+import Web3 from 'Web3'
 
 export const detectAccount = () => {
 	return async (dispatch) => {
@@ -44,6 +45,7 @@ export const connect = () => {
 	return async (dispatch) => {
 		dispatch(connectionRequest());
 		try {
+			new Web3(await web3Provider() as any);
 			dispatch(detectAccount());
 		} catch (err) {
 			console.log(err);
