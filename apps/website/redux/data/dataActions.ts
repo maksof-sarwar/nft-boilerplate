@@ -1,4 +1,4 @@
-import { checkDataFailed, checkDataRequest, checkDataSuccess } from '@armorsclub/apps/website/redux/data/data.slice';
+import { checkDataFailed, checkDataRequest, checkDataSuccess } from './data.slice';
 import { readEth } from '../../utils/ethereum';
 import store from '../store';
 
@@ -6,6 +6,7 @@ export const fetchData = () => {
 	return async (dispatch) => {
 		try {
 			const smartContract = store.getState().blockChain.smartContract;
+			console.log(smartContract);
 			if (smartContract) {
 				dispatch(checkDataRequest());
 				let totalSupply = (await smartContract.totalSupply()).toNumber();

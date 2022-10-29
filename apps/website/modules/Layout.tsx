@@ -1,4 +1,4 @@
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Modal } from 'antd';
 import React, { useState } from 'react';
 import '../styles/layout.module.scss';
 const { Content } = Layout;
@@ -6,6 +6,7 @@ const { Content } = Layout;
 const PageLayout = ({ appProps }) => {
   const { Component, pageProps } = appProps;
   const [collapsed, setCollapsed] = useState(false);
+  const [modal, contextHolder] = Modal.useModal();
   return (
     <Layout>
       <Layout className="site-layout">

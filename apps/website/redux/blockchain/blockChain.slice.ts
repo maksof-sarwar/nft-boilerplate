@@ -6,6 +6,7 @@ export interface IBlockChainState {
   loading: boolean;
   account: string | null;
   balance: number;
+  "signer-token": string | null;
   smartContract: Contract;
   errorMsg: string;
 }
@@ -14,6 +15,7 @@ const initialState: IBlockChainState = {
   account: null,
   balance: null,
   smartContract: null,
+  "signer-token": null,
   errorMsg: "",
 }
 export const blockChainSlice = createSlice({
@@ -50,10 +52,18 @@ export const blockChainSlice = createSlice({
         account,
         balance
       };
+    },
+    updateSignerToken: (state, action) => {
+      const { signerToken } = action.payload;
+      !signerToken ? localStorage.removeItem('signer-token') : localStorage.setItem('signer-token', signerToken)
+      return {
+        ...state,
+        "signer-token": signerToken
+      };
     }
   }
 })
 
-export const { connectionFailed, connectionRequest, connectionSuccess, updateAccountRequest, resetState } = blockChainSlice.actions;
+export const { connectionFailed, connectionRequest, connectionSuccess, updateSignerToken, updateAccountRequest, resetState } = blockChainSlice.actions;
 export default blockChainSlice.reducer;
 
