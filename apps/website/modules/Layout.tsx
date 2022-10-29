@@ -1,15 +1,7 @@
-import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from '@ant-design/icons';
 import { Layout, Menu } from 'antd';
-import { AppProps } from 'next/app';
 import React, { useState } from 'react';
-import '../styles/layout.module.css';
-const { Header, Sider, Content } = Layout;
+import '../styles/layout.module.scss';
+const { Content } = Layout;
 
 const PageLayout = ({ appProps }) => {
   const { Component, pageProps } = appProps;

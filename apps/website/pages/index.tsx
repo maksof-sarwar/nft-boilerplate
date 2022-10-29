@@ -6,7 +6,6 @@ import { RootState } from '../redux/store';
 import { truncate } from '../utils/ethereum';
 import { Alert, Button, Typography } from 'antd';
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import styles from '../styles/index.module.scss';
 
 export function Index() {
@@ -27,8 +26,7 @@ export function Index() {
         <div className="container">
           <div id="welcome">
             <h1>
-              <span> Hello there, </span>
-              Welcome website 👋
+              <span> Welcome To minting website 👋 </span>
             </h1>
           </div>
           {blockChain.account ? (
