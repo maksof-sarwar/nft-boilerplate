@@ -1,0 +1,69 @@
+{
+  "name": "MY SAMPLE",
+  "description": "MY SAMPLE SMAPLE NFTS",
+  "hash": "01122637435162768691",
+  "edition": 3,
+  "date": 1666962978839,
+  "attributes": [
+    {
+      "layerID": 0,
+      "elementID": 1,
+      "trait_type": "BACKGROUND",
+      "value": "BLACK-01_r.png"
+    },
+    {
+      "layerID": 1,
+      "elementID": 2,
+      "trait_type": "BACKS",
+      "value": "EMPTY-01.png"
+    },
+    {
+      "layerID": 2,
+      "elementID": 6,
+      "trait_type": "BEAK",
+      "value": "PURPLE-01.png"
+    },
+    {
+      "layerID": 3,
+      "elementID": 7,
+      "trait_type": "CLASSIC SHADES",
+      "value": "RED-01.png"
+    },
+    {
+      "layerID": 4,
+      "elementID": 3,
+      "trait_type": "COLLAR",
+      "value": "GOLDEN-01.png"
+    },
+    {
+      "layerID": 5,
+      "elementID": 1,
+      "trait_type": "DOLLAR SIGN",
+      "value": "BLUE DOLLAR-01_sr.png"
+    },
+    {
+      "layerID": 6,
+      "elementID": 2,
+      "trait_type": "EYES",
+      "value": "EMPTY-01.png"
+    },
+    {
+      "layerID": 7,
+      "elementID": 6,
+      "trait_type": "HATS",
+      "value": "RED-01.png"
+    },
+    {
+      "layerID": 8,
+      "elementID": 6,
+      "trait_type": "MAIN BODY",
+      "value": "GREEN-01.png"
+    },
+    {
+      "layerID": 9,
+      "elementID": 1,
+      "trait_type": "PLAIN SHADES",
+      "value": "BLUE-01.png"
+    }
+  ]
+}

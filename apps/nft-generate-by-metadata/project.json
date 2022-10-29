@@ -1,0 +1,60 @@
+{
+  "name": "nft-generate-by-metadata",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/nft-generate-by-metadata/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/nft-generate-by-metadata",
+        "main": "apps/nft-generate-by-metadata/src/main.ts",
+        "tsConfig": "apps/nft-generate-by-metadata/tsconfig.app.json",
+        "assets": ["apps/nft-generate-by-metadata/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/nft-generate-by-metadata/src/environments/environment.ts",
+              "with": "apps/nft-generate-by-metadata/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "nft-generate-by-metadata:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "nft-generate-by-metadata:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/nft-generate-by-metadata/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/nft-generate-by-metadata/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

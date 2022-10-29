@@ -1,0 +1,447 @@
+[
+  {
+    "id": 0,
+    "name": "BACKGROUND",
+    "location": "C:\\www\\armorsclub\\libs\\shared\\LAYERS\\BACKGROUND",
+    "elements": [
+      {
+        "id": 1,
+        "groupName": "BACKGROUND",
+        "fileName": "BLACK-01_r.png"
+      },
+      {
+        "id": 2,
+        "groupName": "BACKGROUND",
+        "fileName": "BLUE-01_r.png"
+      },
+      {
+        "id": 3,
+        "groupName": "BACKGROUND",
+        "fileName": "EMPTY-01.png"
+      },
+      {
+        "id": 4,
+        "groupName": "BACKGROUND",
+        "fileName": "GREEN-01.png"
+      },
+      {
+        "id": 5,
+        "groupName": "BACKGROUND",
+        "fileName": "MAROON-01.png"
+      },
+      {
+        "id": 6,
+        "groupName": "BACKGROUND",
+        "fileName": "PURPLE-01_r.png"
+      },
+      {
+        "id": 7,
+        "groupName": "BACKGROUND",
+        "fileName": "RED-01.png"
+      },
+      {
+        "id": 8,
+        "groupName": "BACKGROUND",
+        "fileName": "YELLOW.png"
+      }
+    ],
+    "number": 8
+  },
+  {
+    "id": 1,
+    "name": "BACKS",
+    "location": "C:\\www\\armorsclub\\libs\\shared\\LAYERS\\BACKS",
+    "elements": [
+      {
+        "id": 1,
+        "groupName": "BACKS",
+        "fileName": "BLUE-01.png"
+      },
+      {
+        "id": 2,
+        "groupName": "BACKS",
+        "fileName": "EMPTY-01.png"
+      },
+      {
+        "id": 3,
+        "groupName": "BACKS",
+        "fileName": "GREEN-01.png"
+      },
+      {
+        "id": 4,
+        "groupName": "BACKS",
+        "fileName": "PURPLPE-01.png"
+      },
+      {
+        "id": 5,
+        "groupName": "BACKS",
+        "fileName": "RED-01.png"
+      },
+      {
+        "id": 6,
+        "groupName": "BACKS",
+        "fileName": "TEAL-01.png"
+      },
+      {
+        "id": 7,
+        "groupName": "BACKS",
+        "fileName": "YELLOW-01.png"
+      }
+    ],
+    "number": 7
+  },
+  {
+    "id": 2,
+    "name": "BEAK",
+    "location": "C:\\www\\armorsclub\\libs\\shared\\LAYERS\\BEAK",
+    "elements": [
+      {
+        "id": 1,
+        "groupName": "BEAK",
+        "fileName": "BLUE-01.png"
+      },
+      {
+        "id": 2,
+        "groupName": "BEAK",
+        "fileName": "BROWN-01.png"
+      },
+      {
+        "id": 3,
+        "groupName": "BEAK",
+        "fileName": "GOLDEN-01.png"
+      },
+      {
+        "id": 4,
+        "groupName": "BEAK",
+        "fileName": "GREEN-01.png"
+      },
+      {
+        "id": 5,
+        "groupName": "BEAK",
+        "fileName": "GREY-01.png"
+      },
+      {
+        "id": 6,
+        "groupName": "BEAK",
+        "fileName": "PURPLE-01.png"
+      },
+      {
+        "id": 7,
+        "groupName": "BEAK",
+        "fileName": "RED-01.png"
+      }
+    ],
+    "number": 7
+  },
+  {
+    "id": 3,
+    "name": "CLASSIC SHADES",
+    "location": "C:\\www\\armorsclub\\libs\\shared\\LAYERS\\CLASSIC SHADES",
+    "elements": [
+      {
+        "id": 1,
+        "groupName": "CLASSIC SHADES",
+        "fileName": "BLUE-01.png"
+      },
+      {
+        "id": 2,
+        "groupName": "CLASSIC SHADES",
+        "fileName": "BROWN-01.png"
+      },
+      {
+        "id": 3,
+        "groupName": "CLASSIC SHADES",
+        "fileName": "EMPTY-01.png"
+      },
+      {
+        "id": 4,
+        "groupName": "CLASSIC SHADES",
+        "fileName": "GREEN-01.png"
+      },
+      {
+        "id": 5,
+        "groupName": "CLASSIC SHADES",
+        "fileName": "GREY-01.png"
+      },
+      {
+        "id": 6,
+        "groupName": "CLASSIC SHADES",
+        "fileName": "PURPLE-01.png"
+      },
+      {
+        "id": 7,
+        "groupName": "CLASSIC SHADES",
+        "fileName": "RED-01.png"
+      },
+      {
+        "id": 8,
+        "groupName": "CLASSIC SHADES",
+        "fileName": "YELLOW-01.png"
+      }
+    ],
+    "number": 8
+  },
+  {
+    "id": 4,
+    "name": "COLLAR",
+    "location": "C:\\www\\armorsclub\\libs\\shared\\LAYERS\\COLLAR",
+    "elements": [
+      {
+        "id": 1,
+        "groupName": "COLLAR",
+        "fileName": "BLUE-01.png"
+      },
+      {
+        "id": 2,
+        "groupName": "COLLAR",
+        "fileName": "EMPTY-01.png"
+      },
+      {
+        "id": 3,
+        "groupName": "COLLAR",
+        "fileName": "GOLDEN-01.png"
+      },
+      {
+        "id": 4,
+        "groupName": "COLLAR",
+        "fileName": "GREEN-01.png"
+      },
+      {
+        "id": 5,
+        "groupName": "COLLAR",
+        "fileName": "GREY-01.png"
+      },
+      {
+        "id": 6,
+        "groupName": "COLLAR",
+        "fileName": "PURPLE-01.png"
+      },
+      {
+        "id": 7,
+        "groupName": "COLLAR",
+        "fileName": "RED-01.png"
+      }
+    ],
+    "number": 7
+  },
+  {
+    "id": 5,
+    "name": "DOLLAR SIGN",
+    "location": "C:\\www\\armorsclub\\libs\\shared\\LAYERS\\DOLLAR SIGN",
+    "elements": [
+      {
+        "id": 1,
+        "groupName": "DOLLAR SIGN",
+        "fileName": "BLUE DOLLAR-01_sr.png"
+      },
+      {
+        "id": 2,
+        "groupName": "DOLLAR SIGN",
+        "fileName": "EMPTY-01.png"
+      },
+      {
+        "id": 3,
+        "groupName": "DOLLAR SIGN",
+        "fileName": "GOLDEN DOLLAR-01_sr.png"
+      },
+      {
+        "id": 4,
+        "groupName": "DOLLAR SIGN",
+        "fileName": "GREEN DOLLR-01_sr.png"
+      },
+      {
+        "id": 5,
+        "groupName": "DOLLAR SIGN",
+        "fileName": "PURPLE DOLLAR-01_sr.png"
+      },
+      {
+        "id": 6,
+        "groupName": "DOLLAR SIGN",
+        "fileName": "RED  DOLLAR-01_sr.png"
+      },
+      {
+        "id": 7,
+        "groupName": "DOLLAR SIGN",
+        "fileName": "WHITE DOLLAR-01_sr.png"
+      }
+    ],
+    "number": 7
+  },
+  {
+    "id": 6,
+    "name": "EYES",
+    "location": "C:\\www\\armorsclub\\libs\\shared\\LAYERS\\EYES",
+    "elements": [
+      {
+        "id": 1,
+        "groupName": "EYES",
+        "fileName": "BLUE-01.png"
+      },
+      {
+        "id": 2,
+        "groupName": "EYES",
+        "fileName": "EMPTY-01.png"
+      },
+      {
+        "id": 3,
+        "groupName": "EYES",
+        "fileName": "GREEN-01.png"
+      },
+      {
+        "id": 4,
+        "groupName": "EYES",
+        "fileName": "PURPLE-01.png"
+      },
+      {
+        "id": 5,
+        "groupName": "EYES",
+        "fileName": "RED-01.png"
+      },
+      {
+        "id": 6,
+        "groupName": "EYES",
+        "fileName": "WHITE-01.png"
+      },
+      {
+        "id": 7,
+        "groupName": "EYES",
+        "fileName": "YELLOW-01.png"
+      }
+    ],
+    "number": 7
+  },
+  {
+    "id": 7,
+    "name": "HATS",
+    "location": "C:\\www\\armorsclub\\libs\\shared\\LAYERS\\HATS",
+    "elements": [
+      {
+        "id": 1,
+        "groupName": "HATS",
+        "fileName": "BLACK-01.png"
+      },
+      {
+        "id": 2,
+        "groupName": "HATS",
+        "fileName": "BLUE-01.png"
+      },
+      {
+        "id": 3,
+        "groupName": "HATS",
+        "fileName": "EMPTY-01.png"
+      },
+      {
+        "id": 4,
+        "groupName": "HATS",
+        "fileName": "GREEN-01.png"
+      },
+      {
+        "id": 5,
+        "groupName": "HATS",
+        "fileName": "PURPLE-01.png"
+      },
+      {
+        "id": 6,
+        "groupName": "HATS",
+        "fileName": "RED-01.png"
+      },
+      {
+        "id": 7,
+        "groupName": "HATS",
+        "fileName": "YELLOW-01.png"
+      }
+    ],
+    "number": 7
+  },
+  {
+    "id": 8,
+    "name": "MAIN BODY",
+    "location": "C:\\www\\armorsclub\\libs\\shared\\LAYERS\\MAIN BODY",
+    "elements": [
+      {
+        "id": 1,
+        "groupName": "MAIN BODY",
+        "fileName": "BLACK-01.png"
+      },
+      {
+        "id": 2,
+        "groupName": "MAIN BODY",
+        "fileName": "BLUE-01.png"
+      },
+      {
+        "id": 3,
+        "groupName": "MAIN BODY",
+        "fileName": "BROWN-01.png"
+      },
+      {
+        "id": 4,
+        "groupName": "MAIN BODY",
+        "fileName": "EMPTY-01.png"
+      },
+      {
+        "id": 5,
+        "groupName": "MAIN BODY",
+        "fileName": "GOLDEN-01.png"
+      },
+      {
+        "id": 6,
+        "groupName": "MAIN BODY",
+        "fileName": "GREEN-01.png"
+      },
+      {
+        "id": 7,
+        "groupName": "MAIN BODY",
+        "fileName": "PURPLE-01.png"
+      },
+      {
+        "id": 8,
+        "groupName": "MAIN BODY",
+        "fileName": "RED-01.png"
+      }
+    ],
+    "number": 8
+  },
+  {
+    "id": 9,
+    "name": "PLAIN SHADES",
+    "location": "C:\\www\\armorsclub\\libs\\shared\\LAYERS\\PLAIN SHADES",
+    "elements": [
+      {
+        "id": 1,
+        "groupName": "PLAIN SHADES",
+        "fileName": "BLUE-01.png"
+      },
+      {
+        "id": 2,
+        "groupName": "PLAIN SHADES",
+        "fileName": "EMPTY-01.png"
+      },
+      {
+        "id": 3,
+        "groupName": "PLAIN SHADES",
+        "fileName": "GREEN-01.png"
+      },
+      {
+        "id": 4,
+        "groupName": "PLAIN SHADES",
+        "fileName": "GREY-01.png"
+      },
+      {
+        "id": 5,
+        "groupName": "PLAIN SHADES",
+        "fileName": "PURPLE-01.png"
+      },
+      {
+        "id": 6,
+        "groupName": "PLAIN SHADES",
+        "fileName": "RED-01.png"
+      },
+      {
+        "id": 7,
+        "groupName": "PLAIN SHADES",
+        "fileName": "YELLOW-01.png"
+      }
+    ],
+    "number": 7
+  }
+]
