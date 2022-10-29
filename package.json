@@ -8,6 +8,8 @@
     "pnpm": ">= 7.14.0"
   },
   "scripts": {
+    "nx": "nx",
+    "next": "next",
     "website": "nx serve website --port 80",
     "website:build": "nx build website --prod && nx export website",
     "metadata": "nx serve metadata-generate",
