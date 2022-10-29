@@ -7,7 +7,7 @@ import { truncate } from '../utils/ethereum';
 import { Alert, Button, Typography } from 'antd';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import styles from './index.module.scss';
+import styles from '../styles/index.module.scss';
 
 export function Index() {
   const data = useAppSelector((state: RootState) => state.data);

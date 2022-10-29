@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import './styles.css';
+import '../styles/_app.css';
 import { Provider } from 'react-redux';
 import '../utils/antDesignStyles.less';
 import store from '../redux/store';
