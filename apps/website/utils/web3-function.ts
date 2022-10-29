@@ -7,7 +7,7 @@ export async function web3Provider() {
 			const web3Modal = new Web3Modal({
 				network: 'mainnet',
 				theme: 'dark',
-        cacheProvider: true,
+				cacheProvider: true,
 				providerOptions,
 			});
 			web3Modal.cachedProvider && web3Modal.clearCachedProvider();

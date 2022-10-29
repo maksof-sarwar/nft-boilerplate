@@ -40,6 +40,7 @@ const CONFIG = {
 		ETHERSCAN_LINK:
 			'',
 		ETHERSCAN_APIKEY: ``,
+		WALLET_SIGNIN_MESSAGE: `Welcome to minting dapps`
 	}
 };
 export default CONFIG;

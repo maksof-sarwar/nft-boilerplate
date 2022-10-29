@@ -1,43 +1,35 @@
-import { ethers, providers } from 'ethers';
+import { ethers, Signer, providers } from 'ethers';
 import { readEth } from '../../utils/ethereum';
 import { fetchData } from '../data/dataActions';
 import CONTRACT_ABI from '../../../../artifacts/contracts/contract-sample.sol/CONTRACTSAMPLE.json';
 import config from '@armorsclub/data/config';
 
-import { connectionFailed, connectionRequest, connectionSuccess, updateAccountRequest } from '@armorsclub/apps/website/redux/blockchain/blockChain.slice';
+import { connectionFailed, connectionRequest, connectionSuccess, resetState, updateAccountRequest } from '@armorsclub/apps/website/redux/blockchain/blockChain.slice';
 import { web3Provider } from '../../utils/web3-function';
-import Web3 from 'Web3'
-
+var PROVIDER: providers.Web3Provider | null = null
 export const detectAccount = () => {
 	return async (dispatch) => {
-		const { ethereum } = window as any;
+		try {
+			const { ethereum } = window as any;
+			if (ethereum) {
+				PROVIDER = new ethers.providers.Web3Provider(ethereum)
+				const signer = PROVIDER.getSigner();
+				const account = await signer.getAddress();
+				walletEvents(ethereum, dispatch, signer)
 
-		if (ethereum) {
-			ethereum.on('chainChanged', () => {
-				window.location.reload();
-			});
-			ethereum.on('accountsChanged', (accounts) => {
-				if (!accounts.length) window.location.reload();
-				dispatch(updateAccount(accounts[0]));
-			});
-			const accounts = await ethereum.request({ method: 'eth_accounts' });
-
-			dispatch(
-				connectionSuccess({
-					account: accounts[0] || null,
-					balance: accounts[0]
-						? readEth(
-							await ethereum.request({
-								method: 'eth_getBalance',
-								params: [accounts[0], 'latest'],
-							})
-						)
-						: null,
-					smartContract: nftContract(),
-				})
-			);
-		} else {
-			dispatch(connectionFailed('Install Metamask.'));
+				dispatch(
+					connectionSuccess({
+						account,
+						balance: account
+							? readEth(await signer.getBalance())
+							: 0,
+						smartContract: nftContract(signer),
+					})
+				);
+			} else {
+				dispatch(connectionFailed('Install Metamask.'));
+			}
+		} catch (err) {
 		}
 	};
 };
@@ -45,8 +37,15 @@ export const connect = () => {
 	return async (dispatch) => {
 		dispatch(connectionRequest());
 		try {
-			new Web3(await web3Provider() as any);
+			await web3Provider();
 			dispatch(detectAccount());
+			if (PROVIDER) {
+				const signer = PROVIDER.getSigner();
+				if (!localStorage.getItem('signer-token')) {
+					const data = await signer.signMessage(config.contract.WALLET_SIGNIN_MESSAGE)
+					localStorage.setItem('signer-token', data)
+				}
+			}
 		} catch (err) {
 			console.log(err);
 			dispatch(connectionFailed(err.message));
@@ -54,15 +53,26 @@ export const connect = () => {
 	};
 };
 
-export const nftContract = () => {
-	const provider = new ethers.providers.Web3Provider(window['ethereum']);
-	const signer = provider.getSigner();
-	const contract = new ethers.Contract(config.contract.CONTRACT_ADDRESS, CONTRACT_ABI.abi, signer);
-	return contract;
-};
-export const updateAccount = (account) => {
+export const nftContract = (signer) => new ethers.Contract(config.contract.CONTRACT_ADDRESS, CONTRACT_ABI.abi, signer);
+export const updateAccount = ({ account, balance }) => {
 	return async (dispatch) => {
-		dispatch(updateAccountRequest({ account: account }));
+		dispatch(updateAccountRequest({ account, balance }));
 		dispatch(fetchData());
 	};
 };
+
+
+const walletEvents = (ethereum, dispatch, signer: Signer) => {
+	ethereum.on('chainChanged', () => {
+		localStorage.removeItem('signer-token');
+		window.location.reload()
+	});
+	ethereum.on('accountsChanged', async (accounts) => {
+		if (!accounts.length) {
+			localStorage.removeItem('signer-token')
+			dispatch(resetState())
+			return;
+		}
+		dispatch(updateAccount({ account: accounts[0], balance: readEth(await signer.getBalance()) }));
+	});
+}

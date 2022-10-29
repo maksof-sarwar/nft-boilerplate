@@ -3,11 +3,11 @@ import { Contract } from "ethers";
 
 
 export interface IBlockChainState {
-  loading: boolean,
-  account: string | null,
-  balance: number | null,
-  smartContract: Contract,
-  errorMsg: string,
+  loading: boolean;
+  account: string | null;
+  balance: number;
+  smartContract: Contract;
+  errorMsg: string;
 }
 const initialState: IBlockChainState = {
   loading: false,
@@ -20,6 +20,9 @@ export const blockChainSlice = createSlice({
   name: "blockChain",
   initialState,
   reducers: {
+    resetState: (state) => {
+      return { ...initialState }
+    },
     connectionRequest: state => {
       return {
         ...initialState,
@@ -41,14 +44,16 @@ export const blockChainSlice = createSlice({
       };
     },
     updateAccountRequest: (state, action) => {
+      const { account, balance } = action.payload;
       return {
         ...state,
-        account: action.payload.account,
+        account,
+        balance
       };
     }
   }
 })
 
-export const { connectionFailed, connectionRequest, connectionSuccess, updateAccountRequest } = blockChainSlice.actions;
+export const { connectionFailed, connectionRequest, connectionSuccess, updateAccountRequest, resetState } = blockChainSlice.actions;
 export default blockChainSlice.reducer;
 
