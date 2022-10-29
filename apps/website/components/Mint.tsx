@@ -12,7 +12,7 @@ import { fetchData } from '../redux/data/dataActions';
 import { RootState } from '../redux/store';
 
 import { useEffect } from 'react';
-import { updateSignerToken } from '@armorsclub/apps/website/redux/blockchain/blockChain.slice';
+import { updateSignerToken } from '../redux/blockchain/blockChain.slice';
 
 function Mint() {
   const [modal, contextHolder] = Modal.useModal();

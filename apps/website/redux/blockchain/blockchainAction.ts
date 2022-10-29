@@ -4,7 +4,7 @@ import { fetchData } from '../data/dataActions';
 import CONTRACT_ABI from '../../../../artifacts/contracts/contract-sample.sol/CONTRACTSAMPLE.json';
 import config from '@armorsclub/data/config';
 
-import { connectionFailed, connectionRequest, connectionSuccess, resetState, updateAccountRequest, updateSignerToken } from '@armorsclub/apps/website/redux/blockchain/blockChain.slice';
+import { connectionFailed, connectionRequest, connectionSuccess, resetState, updateAccountRequest, updateSignerToken } from '../blockchain/blockChain.slice';
 import { web3Provider } from '../../utils/web3-function';
 import { ModalProps } from 'antd';
 
