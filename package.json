@@ -4,7 +4,7 @@
   "license": "MIT",
   "engines": {
     "npm": "please-use 'pnpm' or 'yarn",
-    "yarn": ">= 1.22.19",
+    "yarn": ">= 1.22.10",
     "pnpm": ">= 7.14.0"
   },
   "scripts": {
