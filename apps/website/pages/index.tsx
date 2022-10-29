@@ -43,6 +43,11 @@ export function Index() {
                   {truncate(blockChain.account)}
                 </Typography.Paragraph>
               }
+              description={
+                <Typography.Paragraph>
+                  Balance : {blockChain.balance}
+                </Typography.Paragraph>
+              }
               type="info"
             />
           ) : (
