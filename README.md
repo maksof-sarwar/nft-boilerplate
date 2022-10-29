@@ -1,2 +1,8 @@
-# armorsclub
-This repository contians the source code related to Armors Club NFT Project
+# NFT BOILER PLATE
+
+# APPS
+
+-> metadata-generate
+-> nft-generate-by-metadata
+-> website
+-> library
