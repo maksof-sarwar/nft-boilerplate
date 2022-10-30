@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Button, Col, Image } from 'antd';
-import { RootState } from '@nft/apps/website/redux/store';
+import { RootState } from '../redux/store';
 
 function MintCounter({ claimNFTs }) {
   const data = useSelector((state: RootState) => state.data);
