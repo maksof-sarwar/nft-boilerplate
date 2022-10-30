@@ -1,8 +1,8 @@
-import CONFIG from "@armorsclub/data/config";
-import * as path from 'path'
-import * as fs from 'fs'
-import * as ffmpeg from 'fluent-ffmpeg'
-import * as ffmpegPath from '@ffmpeg-installer/ffmpeg'
+import CONFIG from "@nft/data/config";
+import * as path from 'path';
+import * as fs from 'fs';
+import * as ffmpeg from 'fluent-ffmpeg';
+import * as ffmpegPath from '@ffmpeg-installer/ffmpeg';
 ffmpeg.setFfmpegPath(ffmpegPath.path);
 export async function generateImage(metaData) {
 	return new Promise(async (resolve, reject) => {
@@ -14,8 +14,8 @@ export async function generateImage(metaData) {
 				path.join(CONFIG.LAYERSDIR, attribute['trait_type'], attribute['value'])
 			);
 			const videoResp: string = await generateImageCmd(attributesPath, edition);
-			const outputPath = path.join(CONFIG.OUTPUTNFT, videoResp.split('\\').pop())
-			await moveTempoutputToOutput(videoResp, outputPath)
+			const outputPath = path.join(CONFIG.OUTPUTNFT, videoResp.split('\\').pop());
+			await moveTempoutputToOutput(videoResp, outputPath);
 
 
 			resolve(path.basename(outputPath).replace(/\.[^/.]+$/, ""));

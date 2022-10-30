@@ -1,15 +1,15 @@
 import * as fs from 'fs';
-import * as path from 'path'
+import * as path from 'path';
 import * as CLUSTER from 'cluster';
-import CONFIG from '@armorsclub/data/config'
+import CONFIG from '@nft/data/config';
 import { createMetaDataFile, outputDirRead } from 'apps/nft-generate-by-metadata/src/app/function';
-import { IMetadata } from '@armorsclub/data/_interface/IMetadata';
+import { IMetadata } from '@nft/data/_interface/IMetadata';
 import { generateVideo } from 'apps/nft-generate-by-metadata/src/app/create-video';
 import { generateImage } from 'apps/nft-generate-by-metadata/src/app/create-image';
-const METADATA: IMetadata[] = JSON.parse(fs.readFileSync(path.join(CONFIG.BUILD, CONFIG.metDataFileName), { encoding: 'utf-8' }))
+const METADATA: IMetadata[] = JSON.parse(fs.readFileSync(path.join(CONFIG.BUILD, CONFIG.metDataFileName), { encoding: 'utf-8' }));
 const WORKERS = 4;
 const cluster: any = CLUSTER;
-async function startGenerating(workerID:number) {
+async function startGenerating(workerID: number) {
   try {
     let start = Math.ceil(METADATA.length / WORKERS - 1) * (workerID - 1);
     let end =

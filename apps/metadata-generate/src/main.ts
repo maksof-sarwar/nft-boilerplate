@@ -1,9 +1,9 @@
-import CONFIG from '@armorsclub/data/config';
-import { generateLayerCount, layersSetup, writeLayerToJson, generateEdition, removeExistingFolederMetadata, checkLayerFolderExist, createMetaData } from './app/function'
-import { IMetadata } from '@armorsclub/data/_interface/IMetadata';
+import CONFIG from '@nft/data/config';
+import { generateLayerCount, layersSetup, writeLayerToJson, generateEdition, removeExistingFolederMetadata, checkLayerFolderExist, createMetaData } from './app/function';
+import { IMetadata } from '@nft/data/_interface/IMetadata';
 
 
-const createFiles = (edition, metadata:IMetadata[] = [], Exists = new Map()) => {
+const createFiles = (edition, metadata: IMetadata[] = [], Exists = new Map()) => {
   const layers = layersSetup(generateLayerCount());
   writeLayerToJson(layers);
   let numDupes = 0;
@@ -39,15 +39,15 @@ const createFiles = (edition, metadata:IMetadata[] = [], Exists = new Map()) => 
 const start = () => {
   try {
     if (checkLayerFolderExist()) {
-      removeExistingFolederMetadata()
-      const metaData:IMetadata[] = createFiles(CONFIG.noOfEdition)
-      createMetaData(metaData)
+      removeExistingFolederMetadata();
+      const metaData: IMetadata[] = createFiles(CONFIG.noOfEdition);
+      createMetaData(metaData);
     }
   } catch (error) {
-    console.log(error.message) 
+    console.log(error.message);
   } finally {
     console.log('EXIT');
   }
-}
+};
 
-start()
+start();

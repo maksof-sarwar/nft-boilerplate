@@ -1,12 +1,12 @@
-import CONFIG from "@armorsclub/data/config";
-import * as path from 'path'
-import * as fs from 'fs'
-import * as ffmpeg from 'fluent-ffmpeg'
-import * as ffmpegPath from '@ffmpeg-installer/ffmpeg'
+import CONFIG from "@nft/data/config";
+import * as path from 'path';
+import * as fs from 'fs';
+import * as ffmpeg from 'fluent-ffmpeg';
+import * as ffmpegPath from '@ffmpeg-installer/ffmpeg';
 ffmpeg.setFfmpegPath(ffmpegPath.path);
 ffmpeg.availableFormats((err, format) => {
-	console.log(format)
-})
+	console.log(format);
+});
 export async function generateVideo(metaData) {
 	return new Promise(async (resolve, reject) => {
 		try {

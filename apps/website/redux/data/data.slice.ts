@@ -1,17 +1,14 @@
 
-import { createSlice } from "@reduxjs/toolkit"
-export interface IDataState {
-  loading: boolean;
-  information: any;
-  error: boolean;
-  errorMsg: string;
+import { IBase } from '../../data/_interface';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+export interface IDataState extends IBase {
+  data: any | null;
 }
-const initialState = {
+const initialState: IDataState = {
   loading: false,
-  information: {},
-  error: false,
-  errorMsg: '',
-}
+  data: null,
+  error: null
+};
 export const dataSlice = createSlice({
   name: "data",
   initialState,
@@ -20,31 +17,24 @@ export const dataSlice = createSlice({
       return {
         ...state,
         loading: true,
-        error: false,
-        errorMsg: '',
-      }
+      };
     },
-    checkDataSuccess: (state, action) => {
+    checkDataSuccess: (state, action: PayloadAction<IDataState>) => {
       return {
         ...state,
         loading: false,
-        information: {
-          ...action.payload,
-        },
-        error: false,
-        errorMsg: '',
-      }
+        ...action.payload
+      };
     },
-    checkDataFailed: (state, action) => {
+    checkDataFailed: (state, action: PayloadAction<string>) => {
       return {
         ...initialState,
         loading: false,
-        error: true,
         errorMsg: action.payload,
       };
     }
   }
-})
+});
 
 export const { checkDataFailed, checkDataRequest, checkDataSuccess } = dataSlice.actions;
 export default dataSlice.reducer;

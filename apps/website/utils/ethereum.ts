@@ -11,8 +11,8 @@ export const parseEth = (value) => {
 	return ethers.utils.parseEther(value + '');
 };
 
-export const readEth = (ethValue) => {
-	return ethers.utils.formatEther(ethValue);
+export const readEth = (ethValue): number => {
+	return Number(ethers.utils.formatEther(ethValue));
 };
 
 export const truncate = (input, len = 5) =>

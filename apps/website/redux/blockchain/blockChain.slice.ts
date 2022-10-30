@@ -1,29 +1,34 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Contract } from "ethers";
+import storageService from '@nft/libs/services/storage.service';
+import { SHARED } from '../../data/_enum';
+import { IBase } from '../../data/_interface';
 
-
-export interface IBlockChainState {
-  loading: boolean;
-  account: string | null;
-  balance: number;
-  "signer-token": string | null;
-  smartContract: Contract;
-  errorMsg: string;
+export interface IBlockChainState extends IBase {
+  data: {
+    account?: string | null;
+    balance?: number;
+    "signer-token"?: string | null;
+    smartContract?: null | Contract;
+  };
 }
 const initialState: IBlockChainState = {
   loading: false,
-  account: null,
-  balance: null,
-  smartContract: null,
-  "signer-token": null,
-  errorMsg: "",
-}
+  data: {
+    account: null,
+    balance: null,
+    smartContract: null,
+    "signer-token": storageService.getItemFromStorage(SHARED.signerToken) ?? null,
+  },
+  error: null,
+};
 export const blockChainSlice = createSlice({
   name: "blockChain",
   initialState,
   reducers: {
     resetState: (state) => {
-      return { ...initialState }
+      storageService.deleteItemFromStorage(SHARED.signerToken);
+      return { ...initialState };
     },
     connectionRequest: state => {
       return {
@@ -31,39 +36,25 @@ export const blockChainSlice = createSlice({
         loading: true,
       };
     },
-    connectionSuccess: (state, action) => {
+    connectionSuccess: (state, action: PayloadAction<IBlockChainState>) => {
+      const { data } = action.payload;
+      !data['signer-token'] ? storageService.deleteItemFromStorage(SHARED.signerToken) : storageService.setItemToStoage(SHARED.signerToken, data['signer-token']);
       return {
         ...state,
         loading: false,
-        ...action.payload
+        data: { ...state.data, smartContract: data.smartContract, ...data, }
       };
     },
-    connectionFailed: (state, action) => {
+    connectionFailed: (state, action: PayloadAction<string>) => {
       return {
         ...initialState,
         loading: false,
-        errorMsg: action.payload,
+        error: action.payload,
       };
     },
-    updateAccountRequest: (state, action) => {
-      const { account, balance } = action.payload;
-      return {
-        ...state,
-        account,
-        balance
-      };
-    },
-    updateSignerToken: (state, action) => {
-      const { signerToken } = action.payload;
-      !signerToken ? localStorage.removeItem('signer-token') : localStorage.setItem('signer-token', signerToken)
-      return {
-        ...state,
-        "signer-token": signerToken
-      };
-    }
   }
-})
+});
 
-export const { connectionFailed, connectionRequest, connectionSuccess, updateSignerToken, updateAccountRequest, resetState } = blockChainSlice.actions;
+export const { connectionFailed, connectionRequest, connectionSuccess, resetState } = blockChainSlice.actions;
 export default blockChainSlice.reducer;
 

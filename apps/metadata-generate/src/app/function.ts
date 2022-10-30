@@ -1,13 +1,13 @@
-import CONFIG from '@armorsclub/data/config';
+import CONFIG from '@nft/data/config';
 import * as fs from 'fs';
-import * as path from 'path'
-import { IAttribute, IMetadata } from '@armorsclub/data/_interface/IMetadata';
+import * as path from 'path';
+import { IAttribute, IMetadata } from '@nft/data/_interface/IMetadata';
 
 export const checkLayerFolderExist = () => {
   if (fs.existsSync(CONFIG.LAYERSDIR)) {
     return true;
   }
-  throw new Error(`Layer folder not exist.`)
+  throw new Error(`Layer folder not exist.`);
 };
 export const removeExistingFolederMetadata = () => {
   if (fs.existsSync(CONFIG.BUILD)) {
@@ -38,7 +38,7 @@ export const writeLayerToJson = (layers) => {
     JSON.stringify(layers, null, 2),
   );
 };
-export const generateEdition = (layers, attributes:IAttribute[] = [], hashes = []) => {
+export const generateEdition = (layers, attributes: IAttribute[] = [], hashes = []) => {
   for (let [idx, layer] of layers.entries()) {
     const buildData = drawLayer(layer, attributes);
     buildData?.attribute && attributes.push(...buildData.attribute);
@@ -49,7 +49,7 @@ export const generateEdition = (layers, attributes:IAttribute[] = [], hashes = [
     hashes: hashes.join(''),
   };
 };
-export const createMetaData = (metadata:IMetadata[]) => {
+export const createMetaData = (metadata: IMetadata[]) => {
   fs.stat(path.join(CONFIG.BUILD, CONFIG.metDataFileName), (err) => {
     if (err == null || err.code === 'ENOENT') {
       fs.writeFileSync(
@@ -65,7 +65,7 @@ export const createMetaData = (metadata:IMetadata[]) => {
     }
   });
 };
-function getAllTraits(metadata:IMetadata[]) {
+function getAllTraits(metadata: IMetadata[]) {
   let all_traits = {};
   let attr_count = {};
   for (let i = 0; i < metadata.length; i++) {
@@ -102,7 +102,7 @@ function getAllTraits(metadata:IMetadata[]) {
   }
   return { all_traits, attr_count };
 };
-function drawLayer(_layer, attributes:IAttribute[], retry = 0) {
+function drawLayer(_layer, attributes: IAttribute[], retry = 0) {
   const rand = Math.floor(Math.random() * (_layer.number - 0) + 0);
   let element = {
     name: _layer.name,
@@ -118,7 +118,7 @@ function drawLayer(_layer, attributes:IAttribute[], retry = 0) {
   }
 }
 
-function addAttributes(_element, _layer, attribute:IAttribute[] = [], hash = []) {
+function addAttributes(_element, _layer, attribute: IAttribute[] = [], hash = []) {
   attribute.push({
     layerID: _layer.id,
     elementID: _element.id,
@@ -132,7 +132,7 @@ function addAttributes(_element, _layer, attribute:IAttribute[] = [], hash = [])
     hash,
   };
 }
-function getElements(path:string, groupName:string) {
+function getElements(path: string, groupName: string) {
   return fs
     .readdirSync(path)
     .filter((item) => !/(^|\/)\.[^\/\.]/g.test(item))

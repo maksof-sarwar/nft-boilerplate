@@ -1,11 +1,11 @@
 import styles from '../styles/index.module.scss';
-import Mint from '@armorsclub/apps/website/components/Mint';
+import Account from '../components/Account';
 
 export function Index() {
   return (
     <div className={styles.page}>
       <div className="wrapper">
-        <Mint />
+        <Account />
       </div>
     </div>
   );
