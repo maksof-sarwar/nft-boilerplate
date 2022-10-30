@@ -2,7 +2,7 @@ import React from 'react';
 import { parseEth, truncate } from '../utils/ethereum';
 import { Alert, Button, Col, message, Modal, Row, Typography } from 'antd';
 import { DownloadOutlined } from '@ant-design/icons';
-import { useAppDispatch, useAppSelector } from '../hooks/useReducer';
+
 import {
   connect,
   detectAccount,
@@ -13,6 +13,10 @@ import { RootState } from '../redux/store';
 import { useEffect } from 'react';
 import { resetState } from '../redux/blockchain/blockChain.slice';
 import MintCounter from './MintCounter';
+import {
+  useAppDispatch,
+  useAppSelector,
+} from '@nft/apps/website/hooks/useReducer';
 
 function Account() {
   const [modal, contextHolder] = Modal.useModal();

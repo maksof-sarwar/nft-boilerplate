@@ -31,8 +31,6 @@ export const detectAccount = () => {
 						}
 					})
 				);
-			} else {
-				dispatch(connectionFailed('Install Metamask.'));
 			}
 		} catch (err) {
 			dispatch(connectionFailed(err.message));

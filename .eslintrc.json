@@ -6,6 +6,9 @@
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
+        "rules": {
+          "import/no-relative-parent-imports": "error"
+        },
         "@nrwl/nx/enforce-module-boundaries": [
           "error",
           {
