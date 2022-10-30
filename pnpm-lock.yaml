@@ -36,6 +36,7 @@ specifiers:
   ahooks: ^3.7.2
   alchemy-sdk: ^2.1.1
   antd: ^4.23.6
+  antd-img-crop: ^4.2.8
   assert: ^2.0.0
   authereum: ^0.1.14
   babel-jest: 28.1.1
@@ -61,6 +62,7 @@ specifiers:
   less-loader: ^11.1.0
   next: 12.3.1
   next-with-less: ^2.0.5
+  nprogress: ^0.2.0
   nx: 15.0.0
   os-browserify: ^0.3.0
   prettier: ^2.6.2
@@ -89,11 +91,13 @@ dependencies:
   '@nrwl/next': 15.0.0_5abomqatuwixarfohy2dvexsoq
   '@reduxjs/toolkit': 1.8.6_kuo2ie247izvzll3jejufdtq3q
   antd: 4.23.6_biqbaboplfbrettd7655fr4n2y
+  antd-img-crop: 4.2.8_6nwhhda7mddhbr67q5guv5qsze
   core-js: 3.26.0
   less: 4.1.3
   less-loader: 11.1.0_less@4.1.3
   next: 12.3.1_2mygebwfgdyopr3fy2qddu2eli
   next-with-less: 2.0.5_bhmov3cur4gcctpw4k2zrhdwma
+  nprogress: 0.2.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   regenerator-runtime: 0.13.7
@@ -5701,6 +5705,19 @@ packages:
   /ansi-styles/5.2.0:
     resolution: {integrity: sha512-Cxwpt2SfTzTtXcfOlzGEee8O+c+MmUgGrNiBcXnuWxuFJHe6a5Hz7qwhwe5OgaSYI0IJvkLqWX1ASG+cJOkEiA==}
     engines: {node: '>=10'}
+
+  /antd-img-crop/4.2.8_6nwhhda7mddhbr67q5guv5qsze:
+    resolution: {integrity: sha512-zQSuedKaLC4xAKzwnVYGFSB842ii8LoAwJCX96UDfatZcWddIYXLzirj+icOWFsnHDrWsbNCryUfLbTkeOyJHw==}
+    peerDependencies:
+      antd: '>=4.0.0'
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      antd: 4.23.6_biqbaboplfbrettd7655fr4n2y
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-easy-crop: 4.6.1_biqbaboplfbrettd7655fr4n2y
+    dev: false
 
   /antd/4.23.6_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-AYH57cWBDe1ChtbnvG8i9dpKG4WnjE3AG0zIKpXByFNnxsr4saV6/19ihE8/ImSGpohN4E2zTXmo7R5/MyVRKQ==}
@@ -13809,11 +13826,19 @@ packages:
     resolution: {integrity: sha512-DlL+XwOy3NxAQ8xuC0okPgK46iuVNAK01YN7RueYBqqFeGsBjV9XmCAzAdgt+667bCl5kPh9EqKKDwnaPG1I7A==}
     engines: {node: '>=10'}
 
+  /normalize-wheel/1.0.1:
+    resolution: {integrity: sha512-1OnlAPZ3zgrk8B91HyRj+eVv+kS5u+Z0SCsak6Xil/kmgEia50ga7zfkumayonZrImffAxPU/5WcyGhzetHNPA==}
+    dev: false
+
   /npm-run-path/4.0.1:
     resolution: {integrity: sha512-S48WzZW777zhNIrn7gxOlISNAqi9ZC/uQFnRdbeIHhZhCA6UqpkOT8T1G7BvfdgP4Er8gF4sUbaS0i7QvIfCWw==}
     engines: {node: '>=8'}
     dependencies:
       path-key: 3.1.1
+
+  /nprogress/0.2.0:
+    resolution: {integrity: sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==}
+    dev: false
 
   /nth-check/2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
@@ -15760,6 +15785,18 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+
+  /react-easy-crop/4.6.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-/3Y7fScuNosFyKGVEotI6Jef1s4nSZLeeeMM38ubexWHRhyvZJAsmqoXoEj5WPvmM6/Ugy32SymJQwVa4t3S9w==}
+    peerDependencies:
+      react: '>=16.4.0'
+      react-dom: '>=16.4.0'
+    dependencies:
+      normalize-wheel: 1.0.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      tslib: 2.0.1
+    dev: false
 
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -17824,6 +17861,10 @@ packages:
 
   /tslib/1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
+
+  /tslib/2.0.1:
+    resolution: {integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==}
+    dev: false
 
   /tslib/2.4.0:
     resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}

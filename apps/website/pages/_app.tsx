@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import '../utils/antDesignStyles.less';
 import store from '../redux/store';
 import PageLayout from '../modules/Layout';
+
 function App(appProps: AppProps) {
   return (
     <>
