@@ -35,4 +35,4 @@
 - All build files goes to dist folder
 - All shard files are in libs/shared
 
-# Created By [Muhammad Sarwar](github.com/maksof-sarwar)
+<a href="github.com/maksof-sarwar" target="_blank">Created By [Muhammad Sarwar]</a>
