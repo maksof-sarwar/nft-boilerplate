@@ -12,7 +12,7 @@ import { fetchData } from '../redux/data/dataActions';
 import { RootState } from '../redux/store';
 import { useEffect } from 'react';
 import { resetState } from '../redux/blockchain/blockChain.slice';
-import MintCounter from '@nft/apps/website/components/MintCounter';
+import MintCounter from './MintCounter';
 
 function Account() {
   const [modal, contextHolder] = Modal.useModal();
