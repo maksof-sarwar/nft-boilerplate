@@ -1,6 +1,6 @@
-import CONFIG from '@nft/data/config';
+import CONFIG from '@nft/libs/shared/config';
 import { generateLayerCount, layersSetup, writeLayerToJson, generateEdition, removeExistingFolederMetadata, checkLayerFolderExist, createMetaData } from './app/function';
-import { IMetadata } from '@nft/data/_interface/IMetadata';
+import { IMetadata } from '@nft/libs/shared/_interface/IMetadata';
 
 
 const createFiles = (edition, metadata: IMetadata[] = [], Exists = new Map()) => {
@@ -46,7 +46,7 @@ const start = () => {
   } catch (error) {
     console.log(error.message);
   } finally {
-    console.log('EXIT');
+    console.log('Metadata created successfully. Please check libs/shared/BUILD folder.');
   }
 };
 

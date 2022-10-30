@@ -1,10 +1,9 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as CLUSTER from 'cluster';
-import CONFIG from '@nft/data/config';
+import CONFIG from '@nft/libs/shared/config';
 import { createMetaDataFile, outputDirRead } from 'apps/nft-generate-by-metadata/src/app/function';
-import { IMetadata } from '@nft/data/_interface/IMetadata';
-import { generateVideo } from 'apps/nft-generate-by-metadata/src/app/create-video';
+import { IMetadata } from '@nft/libs/shared/_interface/IMetadata';
 import { generateImage } from 'apps/nft-generate-by-metadata/src/app/create-image';
 const METADATA: IMetadata[] = JSON.parse(fs.readFileSync(path.join(CONFIG.BUILD, CONFIG.metDataFileName), { encoding: 'utf-8' }));
 const WORKERS = 4;
@@ -32,7 +31,7 @@ async function startGenerating(workerID: number) {
       }
     }
     console.log('Finshed from worker #' + workerID);
-    process.exit(0);
+    process.exit(96);
   } catch (error) {
     console.log(error);
   }
@@ -47,7 +46,8 @@ export const startScript = () => {
       if (code == 96) {
         exitWorker[worker.process.pid] = true;
         if (Object.keys(exitWorker).length == WORKERS) {
-          process.exit(69);
+          console.log(`NFT Generate successfully. Please check libs/shared/OUTPUTNFT`);
+          process.exit(0);
         }
       }
     });

@@ -4,7 +4,7 @@ export enum NFTTYPE {
 };
 const CONFIG = {
 	nftType: NFTTYPE.IMAGE,
-	noOfEdition: 5,
+	noOfEdition: 2,
 	LAYERSDIR: path.join(process.cwd(), 'libs', 'shared', `LAYERS`),
 	BUILD: path.join(process.cwd(), 'libs', 'shared', `BUILD`),
 	OUTPUTNFT: path.join(process.cwd(), 'libs', 'shared', `OUTPUTNFT`),
@@ -20,14 +20,14 @@ const CONFIG = {
 	LAYERORDERS: [
 		{ name: 'BACKGROUND' },
 		{ name: 'BACKS' },
+		{ name: 'MAIN BODY' },
 		{ name: 'BEAK' },
+		{ name: 'EYES' },
 		{ name: 'CLASSIC SHADES' },
+		{ name: 'PLAIN SHADES' },
+		{ name: 'HATS' },
 		{ name: 'COLLAR' },
 		{ name: 'DOLLAR SIGN' },
-		{ name: 'EYES' },
-		{ name: 'HATS' },
-		{ name: 'MAIN BODY' },
-		{ name: 'PLAIN SHADES' },
 	],
 
 

@@ -1,5 +1,5 @@
-import CONFIG from '@nft/data/config';
-import { IMetadata } from '@nft/data/_interface/IMetadata';
+import CONFIG from '@nft/libs/shared/config';
+import { IMetadata } from '@nft/libs/shared/_interface/IMetadata';
 import * as fs from 'fs';
 import * as path from 'path';
 

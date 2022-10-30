@@ -1,73 +1,54 @@
 {
   "all_traits": {
     "BACKGROUND": {
-      "PURPLE-01_r.png": 1,
-      "sum": 5,
-      "GREEN-01.png": 1,
-      "BLACK-01_r.png": 2,
-      "EMPTY-01.png": 1
+      "BLUE-01_r.png": 2,
+      "sum": 2
     },
     "BACKS": {
-      "PURPLPE-01.png": 1,
-      "sum": 5,
-      "EMPTY-01.png": 2,
+      "GREEN-01.png": 1,
+      "sum": 2,
+      "TEAL-01.png": 1
+    },
+    "MAIN BODY": {
       "RED-01.png": 1,
-      "YELLOW-01.png": 1
+      "sum": 2,
+      "BLUE-01.png": 1
     },
     "BEAK": {
-      "GREY-01.png": 2,
-      "sum": 5,
-      "PURPLE-01.png": 1,
-      "BROWN-01.png": 2
-    },
-    "CLASSIC SHADES": {
-      "RED-01.png": 2,
-      "sum": 5,
-      "YELLOW-01.png": 1,
       "BLUE-01.png": 1,
-      "EMPTY-01.png": 1
-    },
-    "COLLAR": {
-      "GREY-01.png": 2,
-      "sum": 5,
-      "PURPLE-01.png": 2,
-      "GOLDEN-01.png": 1
-    },
-    "DOLLAR SIGN": {
-      "EMPTY-01.png": 1,
-      "sum": 5,
-      "BLUE DOLLAR-01_sr.png": 3,
-      "GREEN DOLLR-01_sr.png": 1
+      "sum": 2,
+      "BROWN-01.png": 1
     },
     "EYES": {
-      "WHITE-01.png": 1,
-      "sum": 5,
-      "RED-01.png": 1,
-      "EMPTY-01.png": 2,
+      "GREEN-01.png": 2,
+      "sum": 2
+    },
+    "CLASSIC SHADES": {
+      "PURPLE-01.png": 1,
+      "sum": 2,
+      "YELLOW-01.png": 1
+    },
+    "PLAIN SHADES": {
+      "EMPTY-01.png": 1,
+      "sum": 2,
       "PURPLE-01.png": 1
     },
     "HATS": {
-      "PURPLE-01.png": 1,
-      "sum": 5,
-      "EMPTY-01.png": 2,
-      "RED-01.png": 1,
-      "GREEN-01.png": 1
+      "YELLOW-01.png": 1,
+      "sum": 2,
+      "BLUE-01.png": 1
     },
-    "MAIN BODY": {
-      "BLUE-01.png": 1,
-      "sum": 5,
-      "BLACK-01.png": 3,
-      "GREEN-01.png": 1
+    "COLLAR": {
+      "GOLDEN-01.png": 2,
+      "sum": 2
     },
-    "PLAIN SHADES": {
-      "YELLOW-01.png": 2,
-      "sum": 5,
+    "DOLLAR SIGN": {
       "EMPTY-01.png": 1,
-      "BLUE-01.png": 1,
-      "GREEN-01.png": 1
+      "sum": 2,
+      "WHITE DOLLAR-01_sr.png": 1
     }
   },
   "attr_count": {
-    "10": 5
+    "10": 2
   }
 }

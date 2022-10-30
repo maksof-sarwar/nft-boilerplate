@@ -1,7 +1,7 @@
-import CONFIG from '@nft/data/config';
+import CONFIG from '@nft/libs/shared/config';
 import * as fs from 'fs';
 import * as path from 'path';
-import { IAttribute, IMetadata } from '@nft/data/_interface/IMetadata';
+import { IAttribute, IMetadata } from '@nft/libs/shared/_interface/IMetadata';
 
 export const checkLayerFolderExist = () => {
   if (fs.existsSync(CONFIG.LAYERSDIR)) {
