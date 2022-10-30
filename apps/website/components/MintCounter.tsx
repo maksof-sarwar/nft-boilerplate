@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Button, Col, Image } from 'antd';
+import { Button, Col } from 'antd';
 import { RootState } from '../redux/store';
 
 function MintCounter({ claimNFTs }) {

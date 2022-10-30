@@ -31,10 +31,8 @@ function Account() {
     if (blockChain.error) message.error(blockChain.error);
   }, [blockChain.error]);
   const claimNFTs = async (mintAmount: number) => {
-    let cost = parseEth(data.data?.cost) as any;
-    let gasLimit = 285000;
-    let totalCostWei = String(cost * mintAmount);
-    let totalGasLimit = String(gasLimit * mintAmount);
+    const cost = parseEth(data.data?.cost) as any;
+    const totalCostWei = String(cost * mintAmount);
 
     try {
       const tx = await blockChain.data?.smartContract.mint(mintAmount, {
