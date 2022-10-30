@@ -7,7 +7,7 @@
 -> website
 -> library
 
-# STEP 1: Edit libs/shared/config.ts according to requirements;
+# STEP 1: Edit libs/shared/config.ts according to requirements
 
 # STEP 2: Create NFT Metadata
 
